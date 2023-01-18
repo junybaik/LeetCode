@@ -1,0 +1,15 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = s.lower()
+        s = ''.join(filter(str.isalnum, s))
+        list1 = []
+        list2 = []
+        for string in s:
+            list2.append(string)
+            list1.append(string)
+        for i in range(len(list1)):
+            if list2[-1] == list1[i]:
+                list2.pop()
+            else:
+                return False
+        return True
